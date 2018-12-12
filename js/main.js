@@ -1,6 +1,5 @@
 //function that gets data from Flickr API and appends the images to the website with pagination.
 function searchFor(pageSet) {
-
     var yourInterest = document.getElementById('search').value;
     console.log(yourInterest);
     if (yourInterest !== "") {
@@ -17,6 +16,8 @@ function searchFor(pageSet) {
             url: url + "&format=json&jsoncallback=?",
             dataType: "json",
             success: function (data) {
+                console.log(data);
+
                 if (data.photos.photo.length !== 0) {
                     //instruction for url format for flickr is: //https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
 
@@ -45,14 +46,21 @@ function searchFor(pageSet) {
                         //append
                         imagesGoHere.appendChild(photoDiv);
 
-
-
-                        //event listener to activate modal on click.
-                        photoDiv.addEventListener('click', function (e) {
-                            return showModal(e.target.attributes["data-value"].value)
-                        })
-
                     }
+
+                    //create pagination based on result list size
+                    console.log(data.photos.photo.length);
+                    var pages = Math.floor(data.photos.photo.length / 10);
+                    document.querySelector("#pagination").innerHTML = "";
+                    for (i = 1; i < pages; i++) {
+                        document.querySelector("#pagination").innerHTML += "<a onclick='searchFor(" + i * 10 + ")'>" + i + "</a>"
+                    }
+
+                    //event listener to activate modal on click.
+                    photoDiv.addEventListener('click', function (e) {
+                        return showModal(e.target.attributes["data-value"].value)
+                    })
+
 
                     //-----------Set up Pagination------//
                     //reveal pagination on search
@@ -73,7 +81,7 @@ function searchFor(pageSet) {
                         modal.style = "display:block";
                         modal.setAttribute('onclick', 'closefunc()');
                         modal.innerHTML = "<img src=" + theImage + ">";
-                        modal.firstElementChild.style = "display:block;margin-left:auto;margin-right:auto;width:auto; height:100%;";
+                        modal.firstElementChild.style = "display:block;margin-left:auto;margin-right:auto;width:90%; height:auto;";
                     }
 
 
@@ -84,6 +92,7 @@ function searchFor(pageSet) {
                     noneFound.style = "border:1px solid black;"
                     document.getElementById('searchBar').appendChild(noneFound);
                 }
+
             },
             type: "get",
         })
@@ -91,6 +100,7 @@ function searchFor(pageSet) {
         alert('please enter search criteria');
     }
 }
+
 
 
 
