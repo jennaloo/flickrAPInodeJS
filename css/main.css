@@ -62,11 +62,12 @@ body {
 
 #modal {
     display: none;
-    position: absolute;
+    position: fixed;
     height: 100vh;
     width: 100vw;
     background-color: white;
     z-index: 2;
+    top: 0;
 }
 
 i {
