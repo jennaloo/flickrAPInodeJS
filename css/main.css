@@ -50,17 +50,16 @@ body {
     z-index: 2;
 }
 
-/*add to modal*/
-
-.closeBtn {
+/*
+add to modal .closeBtn {
     float: right;
     padding: 10px;
     color: black;
     font-size: 25px;
-    z-index: 10;
 }
 
 .closeBtn:hover {
     color: #fb5014;
     cursor: pointer;
 }
+*/
