@@ -2,9 +2,7 @@
     transition: 0.5s ease;
 }
 
-#myNav {
-    top: 0;
-}
+#myNav {}
 
 input::placeholder {
     font-style: italic;
@@ -64,7 +62,7 @@ body {
 
 #modal {
     display: none;
-    position: fixed;
+    position: absolute;
     height: 100vh;
     width: 100vw;
     background-color: white;
