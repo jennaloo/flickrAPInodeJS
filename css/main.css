@@ -54,6 +54,10 @@ body {
     cursor: pointer;
 }
 
+.modalclass:hover {
+    cursor: pointer;
+}
+
 /*
 add to modal .closeBtn {
     float: right;

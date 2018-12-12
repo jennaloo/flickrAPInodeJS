@@ -70,6 +70,7 @@ function searchFor(pageSet) {
                         var modal = document.getElementById('modal');
                         modal.innerHTML = "";
                         //style&fill modal
+                        modal.className = "modalclass";
                         modal.style = "display:block";
                         modal.setAttribute('onclick', 'closefunc()');
                         modal.innerHTML = "<img src=" + theImage + ">";
