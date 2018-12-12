@@ -17,7 +17,6 @@ function searchFor(pageSet) {
             url: url + "&format=json&jsoncallback=?",
             dataType: "json",
             success: function (data) {
-                console.log(data);
                 if (data.photos.photo.length !== 0) {
                     //instruction for url format for flickr is: //https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
 
@@ -31,7 +30,6 @@ function searchFor(pageSet) {
 
                         //put the pieces together into url.
                         var imgURL = "https://farm" + farm + ".staticflickr.com/" + serverId + "/" + theID + "_" + secret + ".jpg";
-                        console.log(imgURL);
 
                         //get,create div, fill with url, style and append.
 

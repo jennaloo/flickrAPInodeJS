@@ -1,13 +1,14 @@
 {
     "name": "flickrapi",
     "version": "1.0.0",
-    "description": "",
+    "description": "app that returns flickr api data",
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "jenna murphy",
     "license": "ISC",
+    "repository": "https://github.com/jennaloo/flickrAPInodeJS",
     "dependencies": {
         "connect": "^3.6.6",
         "serve-static": "^1.13.2"

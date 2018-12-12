@@ -1,3 +1,4 @@
+//http server framework
 var connect = require('connect');
 var serveStatic = require('serve-static');
 let port = 3000;
