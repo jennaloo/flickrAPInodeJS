@@ -46,6 +46,9 @@ function searchFor(pageSet) {
                         //apend
                         imagesGoHere.appendChild(photoDiv);
 
+
+
+                        //event listener to activate modal on click.
                         photoDiv.addEventListener('click', function (e) {
                             return showModal(e.target.attributes["data-value"].value)
                         })
