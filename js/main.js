@@ -20,7 +20,7 @@ function searchFor(pageSet) {
                 if (data.photos.photo.length !== 0) {
                     //instruction for url format for flickr is: //https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
 
-                    //if photo exists, generate images.
+
                     //-------using API to get Images--------------//
                     for (i = pageSet; i < pageSet + 10; i++) {
                         //get the pieces for the image url.
@@ -43,8 +43,9 @@ function searchFor(pageSet) {
                         photoDiv.style.backgroundImage = "url(" + imgURL + ")";
                         photoDiv.setAttribute('data-value', imgURL);
 
-                        //apend
+                        //append
                         imagesGoHere.appendChild(photoDiv);
+
 
 
 
@@ -78,6 +79,12 @@ function searchFor(pageSet) {
                     }
 
 
+                } else {
+                    var noneFound = document.createElement('div');
+                    noneFound.innerHTML = "<h1>No Images Found</h1>"
+                    noneFound.className = "mx-auto m-5 p-3";
+                    noneFound.style = "border:1px solid black;"
+                    document.getElementById('imagesGoHere').appendChild(noneFound);
                 }
             },
             type: "get",
