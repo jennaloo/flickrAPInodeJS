@@ -27,15 +27,24 @@
 
 <body>
 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 p-3 bg-dark"><a href="index.html"><i class="fas fa-camera-retro"></i></a>
+            </div>
+        </div>
+    </div>
+
     <div id="modal"></div>
 
     <div class="container-fluid searchBar">
-        <div class="row bg-dark">
-            <input placeholder="search..." class="m-2" id="search" type="text">
-            <button onclick="searchFor(0)" class="m-2 btn searchBtn">Search Flickr</button>
+        <div class="row">
+            <div class="search w-100 text-center mx-auto">
+                <input placeholder="search..." class="m-2" id="search" type="text">
+                <button onclick="searchFor(0)" class="m-2 p-3 btn searchBtn">Search Flickr</button>
+            </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row" id="imagesGoHere">
         </div>
     </div>
@@ -43,11 +52,11 @@
     <div class="container">
         <div class="row py-5 mx-auto text-center">
             <div id="pagination" class="pagination">
-<a onclick="searchFor(0)" href="#">1</a>
-<a onclick="searchFor(10)" href="#">2</a>
-<a onclick="searchFor(20)" href="#">3</a>
-<a onclick="searchFor(30)" href="#">4</a>
-<a onclick="searchFor(40)" href="#">5</a>
+                <a onclick="searchFor(0)" href="#">1</a>
+                <a onclick="searchFor(10)" href="#">2</a>
+                <a onclick="searchFor(20)" href="#">3</a>
+                <a onclick="searchFor(30)" href="#">4</a>
+                <a onclick="searchFor(40)" href="#">5</a>
             </div>
         </div>
     </div>

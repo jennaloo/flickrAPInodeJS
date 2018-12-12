@@ -20,7 +20,6 @@ function searchFor(pageSet) {
                 if (data.photos.photo.length !== 0) {
                     //instruction for url format for flickr is: //https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
 
-
                     //-------using API to get Images--------------//
                     for (i = pageSet; i < pageSet + 10; i++) {
                         //get the pieces for the image url.
@@ -45,7 +44,6 @@ function searchFor(pageSet) {
 
                         //append
                         imagesGoHere.appendChild(photoDiv);
-
 
 
 
