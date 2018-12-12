@@ -2,6 +2,10 @@
     transition: 0.5s ease;
 }
 
+#myNav {
+    top: 0;
+}
+
 input::placeholder {
     font-style: italic;
     color: lightgrey;
@@ -30,7 +34,7 @@ input {
 
 .searchBar {
     opacity: 0.7;
-    margin-top: 130px;
+    margin-top: 150px;
 }
 
 .searchBar {
