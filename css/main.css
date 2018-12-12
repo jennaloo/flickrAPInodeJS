@@ -12,7 +12,7 @@ input::placeholder {
     margin: 0 auto;
 }
 
-.show button {
+.show a {
     color: black;
     padding: 8px 16px;
     text-decoration: none;
@@ -21,7 +21,7 @@ input::placeholder {
 
 
 
-.show button:hover:not(.active) {
+.show a:hover:not(.active) {
     background-color: #ddd;
 }
 
