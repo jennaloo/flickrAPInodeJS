@@ -59,12 +59,16 @@ body {
     position: fixed;
     height: 100%;
     width: 100%;
-    background-color: white;
     z-index: 1;
     top: 0;
     padding: 50px;
+    margin: 10px;
 }
 
+#modal img {
+    width: 70%;
+    height: auto;
+}
 
 i {
     font-size: 50px;
