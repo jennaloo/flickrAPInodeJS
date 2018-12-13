@@ -1,4 +1,7 @@
-# flickrAPInodeJS
+# flickr API search tool
+
+instructions: run npm start in the terminal and go to said local server, or simply open the index.html file.
+
 The following exercise is designed to test your coding skills and get a sense of your approach 
 to open-ended problems. Once complete please provide a link to a github source repository for your code.
 
