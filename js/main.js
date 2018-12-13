@@ -26,7 +26,7 @@ function searchFor(pageSet) {
                     //Photos from flickr are received in data parts plugged into general url format https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
 
                     //-------using API to get Images--------------//
-                    for (i = pageSet; i < pageSet + 10; i++) {
+                    for (var i = pageSet; i < pageSet + 10; i++) {
                         //get the pieces for the image url.
                         var farm = data.photos.photo[i].farm;
                         var serverId = data.photos.photo[i].server;
@@ -43,7 +43,7 @@ function searchFor(pageSet) {
                         var photoDiv = document.createElement('div');
                         //style
                         photoDiv.className = "col-md-6 col-12 singlePhoto";
-                        photoDiv.style = "border: 100px solid white; background-repeat: no-repeat; background-size: cover; height: 500px; padding:0px;";
+                        photoDiv.style = "border: 60px solid white; background-repeat: no-repeat; background-size: cover; height: 500px; padding:0px;";
                         photoDiv.style.backgroundImage = "url(" + imgURL + ")";
                         photoDiv.setAttribute('data-value', imgURL);
 
@@ -62,7 +62,7 @@ function searchFor(pageSet) {
                     console.log(data.photos.photo.length);
                     var pages = Math.ceil(data.photos.photo.length / 10);
                     document.querySelector("#pagination").innerHTML = "";
-                    for (i = 1; i <= pages; i++) {
+                    for (var i = 1; i <= pages; i++) {
                         document.querySelector("#pagination").innerHTML += "<a onclick='searchFor(" + (i - 1) * 10 + ")'>" + i + "</a>"
                     };
 
@@ -86,7 +86,7 @@ function searchFor(pageSet) {
                         var modalImg = document.createElement('div');
                         modalImg.innerHTML = "<img src=" + theImage + ">";
                         modalImg.className = "text-center";
-                        modalImg.style = "border:2px solid black; background-color:lightgrey; box-shadow:10px 10px 10px grey;"
+                        modalImg.style = "background-color:rgba(10,5,0,0.9); box-shadow:10px 5px 20px black;"
                         modal.appendChild(modalImg);
                         modal.style = "display:block;";
                         modal.setAttribute('onclick', 'closefunc()');

@@ -1,3 +1,7 @@
+#myNav {
+    background-color: rgba(10, 5, 0, 1);
+}
+
 input::placeholder {
     font-style: italic;
     color: lightgrey;
@@ -5,7 +9,7 @@ input::placeholder {
 
 input {
     width: 50%;
-    height: 50px;
+    height: 60px;
 }
 
 .pagination {
@@ -25,8 +29,8 @@ input {
 }
 
 .searchBar {
-    opacity: 0.7;
     margin-top: 150px;
+    background-color: rgba(10, 5, 0, 0.9);
 }
 
 .searchBar {
@@ -58,7 +62,7 @@ body {
     display: none;
     position: fixed;
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     z-index: 1;
     top: 0;
     padding: 50px;
@@ -66,10 +70,21 @@ body {
 
 #modal img {
     width: auto;
-    height: 90%;
-    padding-top: 5px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+
 }
 
+@media(max-width: 500px) {
+    #modal img {
+        width: auto;
+        height: 40vh;
+    }
+    #modal {
+        padding: 0;
+        margin-top: 50%;
+    }
+}
 
 i {
     font-size: 50px;
