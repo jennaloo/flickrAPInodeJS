@@ -82,11 +82,13 @@ function searchFor(pageSet) {
                         var modal = document.getElementById('modal');
                         modal.innerHTML = "";
                         //style&fill modal
-                        modal.className = "modalclass";
-                        modal.style = "display:block";
+                        modal.className = "modalclass text-center";
+                        var modalImg = document.createElement('div');
+                        modalImg.innerHTML = "<img src=" + theImage + ">";
+                        modalImg.className = "text-center";
+                        modal.appendChild(modalImg);
+                        modal.style = "display:block;";
                         modal.setAttribute('onclick', 'closefunc()');
-                        modal.innerHTML = "<img src=" + theImage + ">";
-                        modal.firstElementChild.style = "display:block;margin-left:auto;margin-right:auto;width:90%; height:auto;";
                     }
 
 
