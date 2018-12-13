@@ -5,8 +5,11 @@ function searchFor(pageSet) {
 
     //if your search isn't empty, prepare to load photos on a blank background.
     if (yourInterest !== "") {
-        document.body.style = "background-image:none;";
+        document.body.style = "background-image:none;"
     }
+
+    var mySearch = document.getElementsByClassName('searchBar');
+    mySearch[0].style = 'display:none;';
 
     //if your search isn't empty, run functions to get data to present photos.
     if (yourInterest !== "") {
