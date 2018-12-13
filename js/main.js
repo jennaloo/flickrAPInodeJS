@@ -43,7 +43,7 @@ function searchFor(pageSet) {
                         var photoDiv = document.createElement('div');
                         //style
                         photoDiv.className = "col-md-6 col-12 singlePhoto";
-                        photoDiv.style = "border: 30px solid white; background-repeat: no-repeat; background-size: cover; height: 500px;padding:0px;";
+                        photoDiv.style = "border: 100px solid white; background-repeat: no-repeat; background-size: cover; height: 500px; padding:0px;";
                         photoDiv.style.backgroundImage = "url(" + imgURL + ")";
                         photoDiv.setAttribute('data-value', imgURL);
 
@@ -86,6 +86,7 @@ function searchFor(pageSet) {
                         var modalImg = document.createElement('div');
                         modalImg.innerHTML = "<img src=" + theImage + ">";
                         modalImg.className = "text-center";
+                        modalImg.style = "border:2px solid black; background-color:lightgrey; box-shadow:10px 10px 10px grey;"
                         modal.appendChild(modalImg);
                         modal.style = "display:block;";
                         modal.setAttribute('onclick', 'closefunc()');
