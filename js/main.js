@@ -1,16 +1,20 @@
 //function that gets data from Flickr API and appends the images to the website with pagination.
 function searchFor(pageSet) {
+    //get user search
     var yourInterest = document.getElementById('search').value;
-    console.log(yourInterest);
+
+    //if your search isn't empty, prepare to load photos on a blank background.
     if (yourInterest !== "") {
         document.body.style = "background-image:none;";
     }
 
+    //if your search isn't empty, run functions to get data to present photos.
     if (yourInterest !== "") {
 
+        //get rid of old search results, return new
         var photoDiv = document.getElementById("imagesGoHere").innerHTML = "";
 
-        var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f4cba17fae1e58d710af7c5efe9129b3&tags=" + yourInterest + "&safe_search=1&per_page=50";
+        var url = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f4cba17fae1e58d710af7c5efe9129b3&tags=" + yourInterest + "&safe_search=1&per_page=50"; //can set how many images you want to retrieve in per_page
 
         $.ajax({
             url: url + "&format=json&jsoncallback=?",
@@ -19,7 +23,7 @@ function searchFor(pageSet) {
                 console.log(data);
 
                 if (data.photos.photo.length !== 0) {
-                    //instruction for url format for flickr is: //https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
+                    //Photos from flickr are received in data parts plugged into general url format https://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}.jpg
 
                     //-------using API to get Images--------------//
                     for (i = pageSet; i < pageSet + 10; i++) {
@@ -46,30 +50,31 @@ function searchFor(pageSet) {
                         //append
                         imagesGoHere.appendChild(photoDiv);
 
-                    }
+                        //event listener to activate modal on click.
+                        photoDiv.addEventListener('click', function (e) {
+                            console.log(e.target.attributes["data-value"].value);
+                            return showModal(e.target.attributes["data-value"].value)
+                        })
 
-                    //create pagination based on result list size
+                    } //end of for loop
+
+                    //create pagination based on results list size
                     console.log(data.photos.photo.length);
-                    var pages = Math.floor(data.photos.photo.length / 10);
+                    var pages = Math.ceil(data.photos.photo.length / 10);
                     document.querySelector("#pagination").innerHTML = "";
-                    for (i = 1; i < pages; i++) {
-                        document.querySelector("#pagination").innerHTML += "<a onclick='searchFor(" + i * 10 + ")'>" + i + "</a>"
-                    }
-
-                    //event listener to activate modal on click.
-                    photoDiv.addEventListener('click', function (e) {
-                        return showModal(e.target.attributes["data-value"].value)
-                    })
+                    for (i = 1; i <= pages; i++) {
+                        document.querySelector("#pagination").innerHTML += "<a onclick='searchFor(" + (i - 1) * 10 + ")'>" + i + "</a>"
+                    };
 
 
-                    //-----------Set up Pagination------//
+                    //-----------Set up Pagination-- -- -- //
                     //reveal pagination on search
                     var pagination = document.getElementById('pagination');
                     pagination.className = "show";
                     //------------End Pagination---------//
 
 
-                    //--modal click event listener--//
+                    //showmodal on click
                     var showModal = function showModal(theImage) {
                         document.body.style = "background-image:none;"
                         //create modal
@@ -83,6 +88,7 @@ function searchFor(pageSet) {
                         modal.innerHTML = "<img src=" + theImage + ">";
                         modal.firstElementChild.style = "display:block;margin-left:auto;margin-right:auto;width:90%; height:auto;";
                     }
+
 
 
                 } else {
@@ -100,7 +106,6 @@ function searchFor(pageSet) {
         alert('please enter search criteria');
     }
 }
-
 
 
 
