@@ -107,6 +107,11 @@ i:hover {
     cursor: pointer;
 }
 
+h2 {
+    font-family: 'Courgette', cursive;
+    letter-spacing: 2px;
+}
+
 /*
 add to modal .closeBtn {
     float: right;
