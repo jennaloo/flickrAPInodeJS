@@ -106,7 +106,7 @@ function searchFor(pageSet) {
             type: "get",
         })
     } else {
-        alert('please enter search criteria');
+        alert('You must enter a search criteria :)');
     }
 }
 
