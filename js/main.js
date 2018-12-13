@@ -7,7 +7,7 @@ function searchFor(pageSet) {
     if (yourInterest !== "") {
         document.body.style = "background-image:none;"
     }
-
+    //hide searchbar on search
     var mySearch = document.getElementsByClassName('searchBar');
     mySearch[0].style = 'display:none;';
 
