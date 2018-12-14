@@ -100,9 +100,9 @@ function searchFor(pageSet) {
                 } else {
                     var noneFound = document.createElement('div');
                     noneFound.innerHTML = "<h1>No Images Found</h1>"
-                    noneFound.className = "mx-auto m-5 p-3 text-light text-center";
+                    noneFound.className = "mx-auto m-5 p-3 text-dark text-center";
                     noneFound.style = "border:1px solid black;"
-                    document.getElementById('searchBar').appendChild(noneFound);
+                    document.body.appendChild(noneFound);
                 }
 
             },
@@ -110,6 +110,10 @@ function searchFor(pageSet) {
         })
     } else {
         alert('You must enter a search criteria :)');
+
+        var mySearch = document.getElementsByClassName('searchBar');
+        mySearch[0].style = 'display:block;';
+
     }
 }
 
