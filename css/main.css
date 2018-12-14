@@ -44,7 +44,7 @@ input {
 
 
 body {
-    background-image: url('../img/photographer.jpg');
+    background-image: url(https://source.unsplash.com/1600x900/?nature,water);
     background-repeat: no-repeat;
     height: 100vh;
     background-size: cover;
